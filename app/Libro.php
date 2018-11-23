@@ -14,9 +14,9 @@ class Libro extends Model
         'ano',
         'ubicacion',
         'autor',
-        'area',
         'tipo',
-        'dias'
+        'area',
+        'prestamos'
     ];//campos para llenar de manera masiba
 
     //relacion con categoria

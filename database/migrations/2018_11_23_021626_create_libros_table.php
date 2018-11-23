@@ -19,12 +19,12 @@ class CreateLibrosTable extends Migration
 
             $table->string('nombre');
             $table->string('editorial');
-            $table->string('ano',15);
+            $table->string('ano');
             $table->string('ubicacion');
             $table->string('autor');
+            $table->string('tipo');
             $table->string('area');
-            $table->string('tipo',50);
-            $table->string('dias');
+            $table->string('prestamo');
 
         });
     }

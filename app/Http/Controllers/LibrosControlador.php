@@ -20,9 +20,16 @@ class LibrosControlador extends Controller
         $this->middleware('auth');//que siempre verifique que este autorizado
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $title = 'Libros';
+        $libros = Libro::all();//solo movimientos del usuario en secion
+        //$propietarios = Propietario::all();
+
+        //$propietarios = $propietarios->orderBy('nombre', 'desc')->paginate(5);//paginado viene 15 pro defecto(numero)
+        //$propietarios= Propietario::orderBy('nombre','desc')->get()->paginate();
+
+        return view('libros.index', compact('libros','title'));
     }
 
     /**
@@ -51,12 +58,13 @@ class LibrosControlador extends Controller
         $libro->editorial  = $request->get('editorial');
         $libro->ano  = $request->get('ano');
         $libro->ubicacion  = $request->get('ubicacion');
+        $libro->tipo  = $request->get('tipo');
         $libro->autor  = $request->get('autor');
         $libro->area  = $request->get('area');
         $libro->prestamo  = $request->get('prestamo');
         $libro->save();
 
-        return redirect()->route('libros.show',$propietario);
+        return redirect()->route('libros.show',$libro);
     }
 
     /**
@@ -67,7 +75,11 @@ class LibrosControlador extends Controller
      */
     public function show($id)
     {
-        //
+        $libro = Libro::all()//que le dueño sea el de la secion activa
+        ->where('id', $id) //donde el id de movimiento sea el que este llegando a la funcion show
+        ->first();// devuelve el primer registro
+
+        return view('libros.show', compact('libro'));
     }
 
     /**

@@ -70,6 +70,24 @@
     @endif
 </div> 
 
+<div class="form-group{{ $errors->has('autor') ? ' has-error' : '' }}">
+    {!! Form::label('autor', 'Autor') !!}
+
+    {!! Form::text('autor',
+        null,
+        [
+            'required',
+            'class' => 'form-control'
+        ]
+    ) !!}
+
+    @if($errors->has('autor'))
+        <span class="help-block">
+            <strong>{{ $errors->first('autor') }}</strong>
+        </span>
+    @endif
+</div> 
+
 <div class="form-group {{ $errors->has('tipo') ? ' has-error' : '' }} ">
     {!! Form::label('tipo','Tipo') !!}
 
@@ -91,6 +109,24 @@
 
 </div> 
 
+<div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
+    {!! Form::label('area', 'Area') !!}
+
+    {!! Form::text('area',
+        null,
+        [
+            'required',
+            'class' => 'form-control'
+        ]
+    ) !!}
+
+    @if($errors->has('area'))
+        <span class="help-block">
+            <strong>{{ $errors->first('area') }}</strong>
+        </span>
+    @endif
+</div> 
+
 <div class="form-group{{ $errors->has('prestamo') ? ' has-error' : '' }}">
     {!! Form::label('prestamo', 'Prestamo') !!}
 
@@ -109,23 +145,7 @@
     @endif
 </div> 
 
-<div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
-    {!! Form::label('area', 'Area') !!}
 
-    {!! Form::text('area',
-        null,
-        [
-            'required',
-            'class' => 'form-control'
-        ]
-    ) !!}
-
-    @if($errors->has('area'))
-        <span class="help-block">
-            <strong>{{ $errors->first('area') }}</strong>
-        </span>
-    @endif
-</div> 
 
 
 
