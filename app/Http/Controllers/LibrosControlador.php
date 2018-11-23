@@ -75,13 +75,12 @@ class LibrosControlador extends Controller
      */
     public function show($id)
     {
-        $libro = Libro::all()//que le dueño sea el de la secion activa
-        ->where('id', $id) //donde el id de movimiento sea el que este llegando a la funcion show
-        ->first();// devuelve el primer registro
+        $libro = Libro::all()
+        ->where('id', $id) 
+        ->first();
 
         return view('libros.show', compact('libro'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -90,7 +89,12 @@ class LibrosControlador extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $libro = Libro::all()
+            ->where('id', $id)
+            ->first();
+
+        return view('libros.edit', compact('libro'));
     }
 
     /**
@@ -102,7 +106,24 @@ class LibrosControlador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $libro = Libro::all()
+            ->where('id', $id)
+            ->first();
+
+            $libro->nombre  = $request->get('nombre');
+            $libro->editorial  = $request->get('editorial');
+            $libro->ano  = $request->get('ano');
+            $libro->ubicacion  = $request->get('ubicacion');
+            $libro->tipo  = $request->get('tipo');
+            $libro->autor  = $request->get('autor');
+            $libro->area  = $request->get('area');
+            $libro->prestamo  = $request->get('prestamo');
+        
+
+        // Guarda en la base de datos
+        $libro->save();
+
+        return redirect()->route('libros.show', $libro);
     }
 
     /**
