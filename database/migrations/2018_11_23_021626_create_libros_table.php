@@ -22,6 +22,7 @@ class CreateLibrosTable extends Migration
             $table->string('ano',15);
             $table->string('ubicacion');
             $table->string('autor');
+            $table->string('area');
             $table->string('tipo',50);
             $table->string('dias');
 
