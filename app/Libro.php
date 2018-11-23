@@ -17,12 +17,12 @@ class Libro extends Model
         'tipo',
         'area',
         'prestamos'
-    ];//campos para llenar de manera masiba
+    ];
 
-    //relacion con categoria
+
 
     public function pestramo()
     {
-        return $this->belongsTo(Prestamo::class);//el movimiento pertenece al usuario ..
+        return $this->belongsTo(Prestamo::class);
     }
 }

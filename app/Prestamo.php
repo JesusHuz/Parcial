@@ -24,6 +24,6 @@ class Prestamo extends Model
 
     public function libro()
     {
-        return $this->belongsTo(Libro::class);//el movimiento pertenece al usuario ..
+        return $this->belongsTo(Libro::class);
     }
 }

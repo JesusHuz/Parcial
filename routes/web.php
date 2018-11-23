@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::resource('libros','LibrosControlador');
 
+Route::resource('estudiantes','EstudiantesControlador');
+
+Route::resource('empleados','EmpleadossControlador');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

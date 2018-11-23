@@ -44,6 +44,16 @@
                                     Lista de Libros
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('estudiantes.create')}}">
+                                    Registrar Estudiantes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('estudiantes.index')}}">
+                                    Lista de Estudiantes
+                                </a>
+                            </li>
                         @endif
                     </ul>
 
