@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class EmpleadoControlador extends Controller
+class EmpleadosControlador extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -66,6 +66,7 @@ class EmpleadoControlador extends Controller
         ->first();
 
         return view('empleados.show', compact('empleado'));
+        
     }
 
     /**

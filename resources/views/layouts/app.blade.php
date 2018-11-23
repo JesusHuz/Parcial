@@ -54,6 +54,16 @@
                                     Lista de Estudiantes
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('empleados.create')}}">
+                                    Registrar Empleados
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('empleados.index')}}">
+                                    Lista de Empleados
+                                </a>
+                            </li>
                         @endif
                     </ul>
 

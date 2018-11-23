@@ -19,7 +19,7 @@ Route::resource('libros','LibrosControlador');
 
 Route::resource('estudiantes','EstudiantesControlador');
 
-Route::resource('empleados','EmpleadossControlador');
+Route::resource('empleados','EmpleadosControlador');
 
 Auth::routes();
 

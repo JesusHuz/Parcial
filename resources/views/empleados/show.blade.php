@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <h1>Detalles del Wmpleado {{ $empleado->id }}</h1>
+    <h1>Detalles del Empleados {{ $empleado->id }}</h1>
 
     <table class="table table-bordered">
         <tr>
